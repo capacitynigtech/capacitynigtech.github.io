@@ -1,0 +1,17 @@
+{
+  "name": "capacityhub-telegram-bots",
+  "version": "1.0.0",
+  "description": "CapacityHub Telegram Bots — connects signups, submissions, withdrawals to Supabase and Dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.64.0",
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}

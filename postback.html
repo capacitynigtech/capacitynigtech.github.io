@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>CapacityHub Postback</title></head>
+<body>
+<script>
+const params = new URLSearchParams(window.location.search);
+const user_id = params.get('user_id') || '';
+const amount_local = params.get('amount_local') || '0';
+const amount_usd = params.get('amount_usd') || '0';
+const trans_id = params.get('trans_id') || '';
+const status = params.get('status') || '1';
+
+if (status === '1' && user_id) {
+    const msg = 'UID:' + user_id + ' CPH:' + amount_local + ' USD:' + amount_usd + ' TX:' + trans_id;
+    const token = '8676208273:AAGbNpzNJdBDRSz6LsXteceogAyj3oZoMG4';
+    const chat = '8403139958';
+    fetch('https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chat + '&text=' + encodeURIComponent(msg));
+}
+document.write('OK');
+</script>
+</body>
+</html>
